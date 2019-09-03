@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Item = ({name,img,prof,desc}) => {
+const Item = ({name,img,prof,desc,deleteItem}) => {
 
   const imgS = {
     width:'150px',
@@ -10,6 +10,7 @@ const Item = ({name,img,prof,desc}) => {
 
   return(
     <div>
+      <button onClick={() => deleteItem(name)}>X</button>
       <img 
         src={img} 
         alt= ''

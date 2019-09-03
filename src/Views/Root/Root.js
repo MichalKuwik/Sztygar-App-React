@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import styles from './Root.module.css';
 import ItemWrapper from '../../components/ItemWrapper/ItemWrapper';
-
+import Form from '../../components/Form/Form';
 
 const initialState = [
   {
@@ -23,13 +23,42 @@ class Root extends Component {
     users: initialState
    }
 
+   handleAddItemOnSubmit = (event) => {
+     event.preventDefault()
+
+    const newItem = {
+      image:event.target[0].value,
+      name:event.target[1].value,
+      proffesion:event.target[2].value,
+      description:event.target[3].value,
+    }
+
+    this.setState(prevState => ({
+      users: [...prevState.users,newItem]
+    }))
+
+    event.target.reset()
+   }
+
+   handleDelete = (name) => {
+     const users = this.state.users.filter(item => {
+       return item.name !== name
+     })
+     this.setState({
+       users:users
+     })
+   }
+
   render() { 
     const {users} = this.state
 
     return (  
-      <div>
-        App
-        <ItemWrapper users={users}/>
+      <div className={styles.wrapper}>
+        <ItemWrapper 
+          users={users}
+          deleteItem={this.handleDelete}
+          />
+        <Form submitFn={this.handleAddItemOnSubmit}/>
       </div>
     );
   }
