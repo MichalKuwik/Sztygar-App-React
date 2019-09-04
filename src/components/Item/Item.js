@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Item = ({name,img,prof,desc,deleteItem}) => {
+const Item = ({name,img,prof,desc}) => {
 
   const imgS = {
     width:'150px',
@@ -8,9 +8,22 @@ const Item = ({name,img,prof,desc,deleteItem}) => {
     borderRadius:'50%',
   }
 
+  const itemDiv = {
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    margin:'3rem 0',
+    width:'300px',
+    textAlign:'center',
+    border:'1px solid #2c3946',
+    padding:'20px',
+    borderRadius:'10px'
+
+  }
+
   return(
-    <div>
-      <button onClick={() => deleteItem(name)}>X</button>
+    <div style={itemDiv}>
       <img 
         src={img} 
         alt= ''

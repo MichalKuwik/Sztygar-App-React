@@ -40,15 +40,6 @@ class Root extends Component {
     event.target.reset()
    }
 
-   handleDelete = (name) => {
-     const users = this.state.users.filter(item => {
-       return item.name !== name
-     })
-     this.setState({
-       users:users
-     })
-   }
-
   render() { 
     const {users} = this.state
 
