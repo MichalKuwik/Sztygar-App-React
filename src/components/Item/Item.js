@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 
 const Item = ({name,img,prof,desc}) => {
 
@@ -22,12 +23,21 @@ const Item = ({name,img,prof,desc}) => {
 
   }
 
+  const imgNone = {
+    width:'150px',
+    height:'150px',
+    borderRadius:'50%',
+    background:'#000'
+  }
+
+  const ImgTag = img ? "img": "div"
+
   return(
     <div style={itemDiv}>
-      <img 
+      <ImgTag 
         src={img} 
         alt= ''
-        style={imgS}
+        style={img ? imgS: imgNone}
         />
       <p>{name}</p>
       <p>{prof}</p>
@@ -35,5 +45,17 @@ const Item = ({name,img,prof,desc}) => {
     </div>
   )
 }
+
+Item.propTypes = {
+  image:PropTypes.string,
+  name:PropTypes.string.isRequired,
+  prof:PropTypes.string.isRequired,
+  desc:PropTypes.string.isRequired
+}
+
+Item.defaultProps = {
+  image:null
+}
+
 
 export default Item;
