@@ -16,7 +16,7 @@ const Input = ({tag:Tag,name,label,maxLength}) => {
           id={name}
           placeholder=" "
           maxLength={maxLength}
-          autoComplete="false"
+          autoComplete="off"
         />
         <label className={styles.label} htmlFor={name}>
           {label}

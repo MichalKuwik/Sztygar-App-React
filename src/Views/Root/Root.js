@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import styles from './Root.module.css';
 import ItemWrapper from '../../components/ItemWrapper/ItemWrapper';
 import Form from '../../components/Form/Form';
+import Header from '../../components/Header/Header';
+import {BrowserRouter,Router,Switch} from 'react-router-dom';
 
 const initialState = [
   {
@@ -45,6 +47,7 @@ class Root extends Component {
 
     return (  
       <div className={styles.wrapper}>
+        <Header />
         <ItemWrapper 
           users={users}
           deleteItem={this.handleDelete}
