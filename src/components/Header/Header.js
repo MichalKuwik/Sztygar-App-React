@@ -4,11 +4,27 @@ import logoImg from '../../assets/img/worker.png';
 import styles from './Header.module.scss';
 
 const Header = () => {
+
+  const wrapper = {
+    display: 'flex',
+    justifyContent:'flex-end',
+    alignItems: 'center',
+    padding:'30px 40px',
+  }
+
+  const logoWrapper = {
+    display:'flex',
+    alignItems:'center',
+  
+  }
+
   return(
-    <header>
-      <div className={styles.logoWrapper}>
+    <header style={wrapper}>
+      <div style={logoWrapper}>
         <img src={logoImg} alt=""/>
-        <h3>Notes <span className={styles.span}>Szytygarski</span></h3>
+        <p style={{marginLeft:'1rem',
+        fontSize:'1.5rem',
+        fontFamily:'sans-serif'}}>Notes <span style={{color:'#00d548'}}>Szytygarski</span></p>
       </div>
       <HeaderNavigation />
     </header>

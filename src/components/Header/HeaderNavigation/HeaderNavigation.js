@@ -1,12 +1,32 @@
 import React from 'react';
+import styles from './HeaderNavigation.module.scss'
+import {NavLink} from 'react-router-dom';
 
 const HeaderNavigation = () => {
   return(
     <nav>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </nav>
+    <ul className={styles.wrapper}>
+      <li className={styles.navItem}>
+        <NavLink
+          exact 
+          activeClassName={styles.navItemLinkActive} 
+          className={styles.navItemLink} 
+          to="/">crew</NavLink>
+      </li>
+      <li className={styles.navItem}>
+        <NavLink 
+          activeClassName={styles.navItemLinkActive} 
+          className={styles.navItemLink} 
+          to="/works">works</NavLink>
+      </li>
+      <li className={styles.navItem}>
+        <NavLink 
+          activeClassName={styles.navItemLinkActive} 
+          className={styles.navItemLink} 
+          to="/raports">raports</NavLink>
+      </li>
+    </ul>
+  </nav>
   )
 }
 

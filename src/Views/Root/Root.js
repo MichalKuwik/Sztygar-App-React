@@ -45,15 +45,12 @@ class Root extends Component {
   render() { 
     const {users} = this.state
 
-    return (  
+    return ( 
+      <BrowserRouter> 
       <div className={styles.wrapper}>
         <Header />
-        <ItemWrapper 
-          users={users}
-          deleteItem={this.handleDelete}
-          />
-        <Form submitFn={this.handleAddItemOnSubmit}/>
       </div>
+      </BrowserRouter>
     );
   }
 }
