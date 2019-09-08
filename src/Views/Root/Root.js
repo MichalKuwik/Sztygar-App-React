@@ -1,9 +1,11 @@
 import React,{Component} from 'react';
 import styles from './Root.module.css';
-import ItemWrapper from '../../components/ItemWrapper/ItemWrapper';
-import Form from '../../components/Form/Form';
 import Header from '../../components/Header/Header';
-import {BrowserRouter,Router,Switch} from 'react-router-dom';
+import {BrowserRouter,Route,Switch} from 'react-router-dom';
+import CrewView from '../CrewView/CrewView.js';
+import WorkView from '../WorkView/WorkView.js';
+import RaportView from '../RaportView/RaportView.js';
+
 
 const initialState = [
   {
@@ -46,10 +48,14 @@ class Root extends Component {
     const {users} = this.state
 
     return ( 
-      <BrowserRouter> 
-      <div className={styles.wrapper}>
+      <BrowserRouter>
         <Header />
-      </div>
+        <h1>Hello World!</h1>
+        <Switch>
+          <Route exact path="/" component={CrewView}/>
+          <Route path="/work" component={WorkView}/>
+          <Route path="/raport" component={RaportView}/>
+        </Switch>
       </BrowserRouter>
     );
   }

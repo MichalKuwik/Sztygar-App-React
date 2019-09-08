@@ -1,6 +1,7 @@
 import React from 'react';
-import styles from './HeaderNavigation.module.scss'
 import {NavLink} from 'react-router-dom';
+import styles from './HeaderNavigation.module.scss'
+
 
 const HeaderNavigation = () => {
   return(
@@ -17,13 +18,13 @@ const HeaderNavigation = () => {
         <NavLink 
           activeClassName={styles.navItemLinkActive} 
           className={styles.navItemLink} 
-          to="/works">works</NavLink>
+          to="/work">work</NavLink>
       </li>
       <li className={styles.navItem}>
         <NavLink 
           activeClassName={styles.navItemLinkActive} 
           className={styles.navItemLink} 
-          to="/raports">raports</NavLink>
+          to="/raport">raport</NavLink>
       </li>
     </ul>
   </nav>

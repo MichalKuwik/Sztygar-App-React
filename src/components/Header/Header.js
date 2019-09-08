@@ -1,13 +1,13 @@
 import React from 'react';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 import logoImg from '../../assets/img/worker.png';
-import styles from './Header.module.scss';
+// import styles from './Header.module.scss';
 
 const Header = () => {
 
   const wrapper = {
     display: 'flex',
-    justifyContent:'flex-end',
+    justifyContent:'flex-start',
     alignItems: 'center',
     padding:'30px 40px',
   }
