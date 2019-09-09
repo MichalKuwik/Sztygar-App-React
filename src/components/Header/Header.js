@@ -2,8 +2,10 @@ import React from 'react';
 import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 import logoImg from '../../assets/img/worker.png';
 // import styles from './Header.module.scss';
+import Button from '../Button/Button';
 
-const Header = () => {
+
+const Header = ({openModalFn}) => {
 
   const wrapper = {
     display: 'flex',
@@ -27,6 +29,10 @@ const Header = () => {
         fontFamily:'sans-serif'}}>Notes <span style={{color:'#00d548'}}>Szytygarski</span></p>
       </div>
       <HeaderNavigation />
+      <Button 
+        secondary
+        onClick={openModalFn}
+        >dodaj</Button>
     </header>
   )
 }

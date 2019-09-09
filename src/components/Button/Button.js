@@ -1,17 +1,15 @@
 import React from 'react'
 import styles from './Button.module.scss';
 
-const Button = ({children}) => {
+const Button = ({children,secondary,...props}) => {
 
-  const btn = {
-    padding:'10px',
-    border:'1px solid #00d548',
-    background:'transparent',
-    color:'#7d7d7d',
-  }
+ const btnStyle = secondary ? styles.secondaryBtn : styles.btn
 
   return(
-    <button style={btn}>{children}</button>
+    <button 
+      className={btnStyle}
+      {...props}
+      >{children}</button>
   )
 }
 

@@ -5,7 +5,7 @@ import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import CrewView from '../CrewView/CrewView.js';
 import WorkView from '../WorkView/WorkView.js';
 import RaportView from '../RaportView/RaportView.js';
-
+import Modal from '../../components/Modal/Modal';
 
 const initialState = [
   {
@@ -24,7 +24,8 @@ const initialState = [
 
 class Root extends Component {
   state = { 
-    users: initialState
+    // users: initialState
+    isModalOpen:false,
    }
 
    handleAddItemOnSubmit = (event) => {
@@ -44,18 +45,31 @@ class Root extends Component {
     event.target.reset()
    }
 
+   handleOpenModal = () => {
+     this.setState({
+       isModalOpen:true,
+     })
+   }
+
+   handleCloseModal = () => {
+     this.setState({
+       isModalOpen:false
+     })
+   }
+
   render() { 
-    const {users} = this.state
+    const {isModalOpen} = this.state
 
     return ( 
       <BrowserRouter>
-        <Header />
+        <Header openModalFn={this.handleOpenModal}/>
         <h1>Hello World!</h1>
         <Switch>
           <Route exact path="/" component={CrewView}/>
           <Route path="/work" component={WorkView}/>
           <Route path="/raport" component={RaportView}/>
         </Switch>
+        {isModalOpen ? <Modal closeModalFn={this.handleCloseModal}/> : false}
       </BrowserRouter>
     );
   }
