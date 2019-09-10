@@ -3,6 +3,7 @@ import styles from './Form.module.scss';
 import Input from '../Input/Input.js';
 import Button from '../Button/Button';
 import Title from '../Title/Title';
+import PropTypes from 'prop-types';
 
 const Form = ({submitFn}) => {
   return(
@@ -36,5 +37,10 @@ const Form = ({submitFn}) => {
   </div>
   )
 }
+
+Form.propTypes = {
+  submitFn: PropTypes.func.isRequired
+}
+
 
 export default Form;

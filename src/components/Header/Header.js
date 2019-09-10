@@ -3,6 +3,7 @@ import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
 import logoImg from '../../assets/img/worker.png';
 // import styles from './Header.module.scss';
 import Button from '../Button/Button';
+import PropTypes from 'prop-types';
 
 
 const Header = ({openModalFn}) => {
@@ -35,6 +36,10 @@ const Header = ({openModalFn}) => {
         >dodaj</Button>
     </header>
   )
+}
+
+Header.propTypes = {
+  openModalFn: PropTypes.func.isRequired
 }
 
 export default Header;

@@ -1,5 +1,6 @@
 import React from 'react'
 import Item from '../Item/Item';
+import PropTypes from 'prop-types';
 
 const ItemWrapper = ({users,deleteItem}) => {
 
@@ -20,6 +21,11 @@ const ItemWrapper = ({users,deleteItem}) => {
       {list}
     </div>
   )
+}
+
+ItemWrapper.propTypes = {
+  users:PropTypes.array.isRequired,
+  deleteItem:PropTypes.func.isRequired
 }
 
 export default ItemWrapper;

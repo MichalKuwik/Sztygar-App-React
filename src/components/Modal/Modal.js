@@ -1,5 +1,6 @@
 import React from 'react';
 import Form from '../Form/Form';
+import PropTypes from 'prop-types';
 
 const Modal = ({closeModalFn}) => {
   
@@ -8,9 +9,9 @@ const Modal = ({closeModalFn}) => {
     top:'50%',
     left:0,
     right:0,
-    transform: 'translateY(-56%)',
-    width:'40vw',
-    height: '80vh',
+    transform: 'translateY(-50%)',
+    width:'60vw',
+    height: '90vh',
     background: '#0a1623',
     border:'1px solid #818181',
     boxShadow: '0 20px 40px -10px rgba(#818181, .5)',
@@ -37,6 +38,10 @@ const Modal = ({closeModalFn}) => {
       <Form />
     </div>
   )
+}
+
+Modal.propTypes = {
+  closeModalFn: PropTypes.func.isRequired
 }
 
 export default Modal;
