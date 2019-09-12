@@ -56,7 +56,7 @@
  
  .input:focus ~ .formItemBar,
  .textarea:focus ~ .formItemBar {
-  background: #7d7d7d;;
+  background: #7d7d7d;
  }
  
  .button {

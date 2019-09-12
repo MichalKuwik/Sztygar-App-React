@@ -1,78 +1,94 @@
 import React,{Component} from 'react';
-// import styles from './Root.module.css';
-import Header from '../../components/Header/Header';
+import './Root.css';
+import AppContext from '../../context';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
-import CrewView from '../CrewView/CrewView.js';
-import WorkView from '../WorkView/WorkView.js';
-import RaportView from '../RaportView/RaportView.js';
+import CrewView from '../CrewView/CrewView';
+import RaportsView from '../RaportsView/RaportsView';
+import WorkView from '../WorkView/WorkView';
+import {initialState} from '../../assets/data/data';
+import Header from '../../components/Header/Header';
 import Modal from '../../components/Modal/Modal';
 
-// const initialState = [
-//   {
-//     image:"https://cdnpl1.img.sputniknews.com/images/90/07/900774.jpg",
-//     name:"Tomasz Kuter",
-//     proffesion: "Górnik eksploatacji",
-//     description: "Żonaty, 2 dzieci. Pracuje w górnictwie 18lat"
-//   },
-//   {
-//     image:"https://img17.demotywatoryfb.pl//uploads/201210/1349206587_efukd2_600.jpg",
-//     name: "Eryk Zuber",
-//     proffesion: "Górnik cieśla",
-//     description:"Kawaler, bezdzietny, Pracuje na kopalni od 8lat"
-//   }
-// ]
 
 class Root extends Component {
-  state = { 
-    // users: initialState
-    isModalOpen:false,
-   }
 
-   handleAddItemOnSubmit = (event) => {
-     event.preventDefault();
+  state = {
+    crew:initialState,
+    works:[{name:"Poszyć i napiąć T-3/C1"}],
+    raports:[{description:"Wykonano szycie nr 13 na T-3/C1"}],
+    modalIsOpen: false,
+   
+  }
 
-    const newItem = {
-      image:event.target[0].value,
-      name:event.target[1].value,
-      proffesion:event.target[2].value,
-      description:event.target[3].value,
-    }
+  handleSubmit = (e,newItem) => {
+    e.preventDefault();
 
     this.setState(prevState => ({
-      users: [...prevState.users,newItem]
-    }))
+      [newItem.type]: [...prevState[newItem.type],newItem],
+    }));
+    
+    
 
-    event.target.reset()
-   }
+    this.handleCLoseModal()
+  }
 
-   handleOpenModal = () => {
-     this.setState({
-       isModalOpen:true,
-     })
-   }
+  handleOpenModal = () => {
+    this.setState({
+      modalIsOpen:true
+    })
+  }
 
-   handleCloseModal = () => {
-     this.setState({
-       isModalOpen:false
-     })
-   }
+  handleCLoseModal = () => {
+    this.setState({
+      modalIsOpen:false
+    })
+  }
 
-  render() { 
-    const {isModalOpen} = this.state
+  // deleteItem = (name) => {
+    
+  //   const crew = this.state.crew.filter(item => {
+  //     return item.name !== name;
+  //   })
+  //   const works = this.state.works.filter(item => {
+  //     return item.name !== name;
+  //   })
+  //   const raports = this.state.raports.filter(item => {
+  //     return item.name !== name;
+  //   })
+  //   this.setState({
+  //     crew,
+  //     works,
+  //     raports
+  //   })
+  // }
 
-    return ( 
+  render(){
+
+    const {modalIsOpen} = this.state;
+
+    const contextElements = {
+      ...this.state,
+      handleSubmit: this.handleSubmit,
+      deleteItem:this.deleteItem
+    }
+
+    return (
+
       <BrowserRouter>
+      <AppContext.Provider value={contextElements}>
         <Header openModalFn={this.handleOpenModal}/>
-        <h1>Hello World!</h1>
         <Switch>
           <Route exact path="/" component={CrewView}/>
-          <Route path="/work" component={WorkView}/>
-          <Route path="/raport" component={RaportView}/>
+          <Route path="/works" component={WorkView}/>
+          <Route path="/raports" component={RaportsView}/>
         </Switch>
-        {isModalOpen ? <Modal closeModalFn={this.handleCloseModal}/> : false}
+        {modalIsOpen ? <Modal closeModalFn={this.handleCLoseModal}/> : null}
+        </AppContext.Provider>
       </BrowserRouter>
     );
   }
+  
 }
- 
+
+
 export default Root;

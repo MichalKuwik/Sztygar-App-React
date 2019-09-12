@@ -1,8 +1,14 @@
 import React from 'react';
+import AppContext from '../../context';
+import ListItem from '../../components/ListItem/ListItem';
 
-const CrewView = () => {
+const CrewView= () => {
   return(
-    <h2>Crew View</h2>
+    <AppContext.Consumer>
+      {(context) => (
+        <ListItem users={context.crew}/>
+      )}
+    </AppContext.Consumer>
   )
 }
 

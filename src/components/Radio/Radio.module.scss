@@ -10,6 +10,7 @@
   input {
     opacity: 0;
     position: absolute;
+    
   }
   
   &Button {
@@ -18,10 +19,11 @@
     height: 15px;
     border-radius: 50%;
     border: 2px solid #7d7d7d;
+  
+    // &:checked{
+    //   background-color: #7d7d7d;
+    //   box-shadow: inset 0 0 0 2px #00d548;
+    // }
   }
   
-  input:checked + &Button {
-    background-color: #7d7d7d;
-    box-shadow: inset 0 0 0 2px #00d548;
-  }
 }

@@ -1,61 +1,67 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Item.module.css'
+import image from '../../assets/img/tools.png';
+import AppContext from '../../context';
 
-const Item = ({name,img,prof,desc}) => {
-
-  const imgS = {
-    width:'150px',
-    height:'150px',
-    borderRadius:'50%',
+const Item = ({name,img,proffesion,description}) => {
+  
+    const stylImage = {
+    width:'50px',
+    height:'50px',
   }
 
-  const itemDiv = {
-    display:'flex',
-    flexDirection:'column',
-    justifyContent:'center',
-    alignItems:'center',
-    margin:'3rem 0',
-    width:'300px',
-    textAlign:'center',
-    border:'1px solid #2c3946',
-    padding:'20px',
-    borderRadius:'10px'
-
-  }
-
-  const imgNone = {
-    width:'150px',
-    height:'150px',
-    borderRadius:'50%',
-    background:'#000'
-  }
-
-  const ImgTag = img ? "img": "div"
+    const ImgTag = img ? "img" : "div"
 
   return(
-    <div style={itemDiv}>
-      <ImgTag 
-        src={img} 
-        alt= ''
-        style={img ? imgS: imgNone}
-        />
-      <p>{name}</p>
-      <p>{prof}</p>
-      <p>{desc}</p>
-    </div>
+
+    <AppContext.Consumer>
+      {(context => (
+        <div style={item}>
+        {img && <ImgTag 
+           className={img ? styles.img : styles.imgNone}
+           src={img} 
+           alt={name} 
+         />}
+         {name && <p className={styles.p}>{name}</p>}
+         <p>{proffesion}</p>
+         <p>{description}</p>
+         {name || description && !proffesion ? <img style={stylImage} src={image} alt=""/>: null}
+         
+         {/* <button onClick={() => context.deleteItem(name)}>X</button> */}
+       </div>
+      ))}
+    </AppContext.Consumer>
+    
   )
 }
 
 Item.propTypes = {
-  image:PropTypes.string,
-  name:PropTypes.string.isRequired,
-  prof:PropTypes.string.isRequired,
-  desc:PropTypes.string.isRequired
+  img: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  proffesion: PropTypes.string.isRequired,
+  description:PropTypes.string.isRequired
 }
 
 Item.defaultProps = {
-  image:null
+  img:null
 }
+
+const item = {
+  width:'40vw',
+  margin:'2rem',
+  display:'flex',
+  flexDirection: 'column',
+  justifyContent: 'center',
+  alignItems: 'center',
+  border:'1px solid #fff',
+  borderRadius:'20px',
+  padding:'15px'
+}
+
+ 
+
+
 
 
 export default Item;

@@ -1,0 +1,16 @@
+.img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background: url('../../assets/img/miner.png');
+}
+
+.imgNone{
+  margin:auto;
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  background: url('../../assets/img/miner.png');
+  background-size: 100%;
+  background-position:center;
+}

@@ -1,15 +1,16 @@
-import React from 'react'
-import styles from './Button.module.scss';
+import React from 'react';
+import styles from './Button.module.css';
 
-const Button = ({children,secondary,...props}) => {
+const Button = ({children,secondary,openModalFn,...props}) => {
 
- const btnStyle = secondary ? styles.secondaryBtn : styles.btn
+  const btnClass = secondary ? styles.secondary: styles.btn
 
   return(
-    <button 
-      className={btnStyle}
-      {...props}
-      >{children}</button>
+    <button
+      onClick={openModalFn}
+      className={btnClass}
+      >{children}
+    </button>
   )
 }
 

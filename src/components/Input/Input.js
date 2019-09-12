@@ -1,27 +1,23 @@
-import React from 'react';
-import styles from './Input.module.scss';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
+import styles from './Input.module.css'
 
-//zastąpimy textarea dynamicznie propsem,
-//jezeli podajemy nazwe tagu na nie html'owa musi byc z Duzej litery!
-//robimy myk w propsach
-
-const Input = ({tag:Tag,name,label,maxLength}) => {
+const Input = ({tag:Tag,name,id,maxLength,label,...props}) => {
   return(
     <div className={styles.formItem}>
-        <Tag
-          className={Tag === 'textarea' ? styles.textarea : styles.input}
-          type="text"
-          name={name}
-          id={name}
-          placeholder=" "
-          maxLength={maxLength}
-          autoComplete="off"
+      <Tag 
+        className={Tag === 'textarea' ? styles.textarea : styles.input}
+        name={name}
+        id={id}
+        maxLength={maxLength}
+        placeholder= " "
+        {...props}
         />
-        <label className={styles.label} htmlFor={name}>
-          {label}
-        </label>
-        <div className={styles.formItemBar} />
+      <label 
+        htmlFor={name}
+        className={styles.label}
+        >{label}</label>
+      <div className={styles.formItemBar}></div>
     </div>
   )
 }
@@ -29,13 +25,14 @@ const Input = ({tag:Tag,name,label,maxLength}) => {
 Input.propTypes = {
   tag:PropTypes.string,
   name:PropTypes.string.isRequired,
-  label:PropTypes.string.isRequired,
+  id:PropTypes.string.isRequired,
   maxLength:PropTypes.number,
+  label:PropTypes.string.isRequired,
 }
 
 Input.defaultProps = {
   tag: 'input',
-  maxLength: 200,
+  maxLength: 200
 }
 
 export default Input;

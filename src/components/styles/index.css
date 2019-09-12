@@ -1,11 +1,12 @@
-*,*::before,*::after{
+*, *::before,*::after{
   margin:0;
   padding:0;
   box-sizing: border-box;
 }
 
-body{
+body {
+  color: #fff;
   background: #0a1623;
-  color:#fff;
 }
+
 

@@ -1,45 +1,40 @@
-import React from 'react';
-import HeaderNavigation from './HeaderNavigation/HeaderNavigation';
-import logoImg from '../../assets/img/worker.png';
-// import styles from './Header.module.scss';
+import React from 'react'
+import logo from '../../assets/img/worker.png';
+import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import Button from '../Button/Button';
-import PropTypes from 'prop-types';
-
 
 const Header = ({openModalFn}) => {
-
-  const wrapper = {
-    display: 'flex',
-    justifyContent:'flex-start',
-    alignItems: 'center',
-    padding:'30px 40px',
-  }
-
-  const logoWrapper = {
-    display:'flex',
-    alignItems:'center',
-  
-  }
-
   return(
     <header style={wrapper}>
-      <div style={logoWrapper}>
-        <img src={logoImg} alt=""/>
-        <p style={{marginLeft:'1rem',
+      <div style={logoW}>
+      <img src={logo} alt=""/>
+      <p style={{
+        marginLeft:'1rem',
         fontSize:'1.5rem',
-        fontFamily:'sans-serif'}}>Notes <span style={{color:'#00d548'}}>Szytygarski</span></p>
+        fontFamily:'sans-serif'
+      }}><span style={{color:'#00d548'}}>Notes</span> Szytgarski</p>
       </div>
-      <HeaderNavigation />
+      
+      <HeaderNavigation/>
       <Button 
         secondary
-        onClick={openModalFn}
+        openModalFn={openModalFn}
         >dodaj</Button>
     </header>
   )
 }
 
-Header.propTypes = {
-  openModalFn: PropTypes.func.isRequired
+const wrapper = {
+  display: 'flex',
+  justifyContent:'space-around',
+  alignItems: 'center',
+  padding:'30px 40px',
+}
+
+const logoW = {
+  display:'flex',
+  alignItems:'center',
+
 }
 
 export default Header;
