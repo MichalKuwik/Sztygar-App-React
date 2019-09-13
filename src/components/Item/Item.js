@@ -18,7 +18,7 @@ const Item = ({name,img,proffesion,description}) => {
     <AppContext.Consumer>
       {(context => (
         <div style={item}>
-        {img && <ImgTag 
+        {proffesion && <ImgTag 
            className={img ? styles.img : styles.imgNone}
            src={img} 
            alt={name} 
@@ -26,7 +26,7 @@ const Item = ({name,img,proffesion,description}) => {
          {name && <p className={styles.p}>{name}</p>}
          <p>{proffesion}</p>
          <p>{description}</p>
-         {name || description && !proffesion ? <img style={stylImage} src={image} alt=""/>: null}
+         {!proffesion ? <img style={stylImage} src={image} alt=""/>: null}
          
          {/* <button onClick={() => context.deleteItem(name)}>X</button> */}
        </div>
