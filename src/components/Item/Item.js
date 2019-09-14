@@ -39,7 +39,7 @@ const Item = ({name,img,proffesion,description}) => {
 Item.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string.isRequired,
-  proffesion: PropTypes.string.isRequired,
+  proffesion: PropTypes.string,
   description:PropTypes.string.isRequired
 }
 
@@ -54,7 +54,7 @@ const item = {
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  border:'1px solid #fff',
+  border:'1px solid #00d548',
   borderRadius:'20px',
   padding:'15px'
 }

@@ -5,6 +5,12 @@ import Item from '../Item/Item';
 
 const ListItem = ({users}) => {
   
+  const wrapper_list = {
+    display:'flex',
+    flexDirection:'column',
+    alignItems:'center'
+  }
+
   const usersList = users.map(item => (
     <Item 
       key={item.name}
@@ -16,9 +22,9 @@ const ListItem = ({users}) => {
   ))
 
   return(
-    <span>
+    <div style={wrapper_list}>
       {usersList}
-    </span>
+    </div>
   )
 }
 

@@ -82,13 +82,13 @@ class Form extends Component {
              </Radio>
            </div>
  
-           {/* {type !== 'crew' ? null : <Input
+           {type !== 'crew' ? null : <Input
              onChange={this.handleInputChange}
              value={this.state.image} 
              name="image"
              id="image"
              label="zdjęcie"
-           />} */}
+           />}
            
            {type !== 'crew' ? null :  <Input
              onChange={this.handleInputChange}
