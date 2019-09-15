@@ -22,3 +22,9 @@
   right:2%;
   top:2%;
 }
+
+@media screen and (max-width:767px){
+  .wrapper{
+    width:95vw;
+  }
+}

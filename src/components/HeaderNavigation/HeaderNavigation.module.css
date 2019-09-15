@@ -11,3 +11,21 @@
 .navItemLinkActive{
   font-weight: bold;
 }
+
+@media screen and (max-width:767px){
+  .wrapper{
+    height:20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .navItem{
+    margin:1rem auto;
+    font-size:1.3rem;
+  }
+
+  .navItemLink{
+    text-align: center;
+  }
+  
+}

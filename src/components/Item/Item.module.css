@@ -3,6 +3,7 @@
   height:150px;
   border-radius:50%;
   background: url('../../assets/img/miner.png');
+  margin-bottom:0.6rem;
 }
 
 .imgNone{
@@ -13,4 +14,32 @@
   background: url('../../assets/img/miner.png');
   background-size: 100%;
   background-position:center;
+}
+
+.item{
+  width:40vw;
+  margin:2rem;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border:1px solid #00d548;
+  border-radius:20px;
+  padding:15px;
+}
+
+.p{
+  font-size:1.1rem;
+  text-align: center;
+  margin-top:.6rem;
+}
+.p_prof{
+  font-size:1rem;
+  color:#00d548;
+}
+
+@media screen and (max-width:767px){
+  .item{
+    width:90%;
+  }
 }

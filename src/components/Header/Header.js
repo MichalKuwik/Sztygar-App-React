@@ -2,10 +2,14 @@ import React from 'react'
 import logo from '../../assets/img/worker.png';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import Button from '../Button/Button';
+import styles from './Header.module.css';
 
 const Header = ({openModalFn}) => {
   return(
-    <header style={wrapper}>
+    <header 
+      
+      className={styles.wrapper}
+      >
       <div style={logoW}>
       <img src={logo} alt=""/>
       <p style={{
@@ -22,13 +26,6 @@ const Header = ({openModalFn}) => {
         >dodaj</Button>
     </header>
   )
-}
-
-const wrapper = {
-  display: 'flex',
-  justifyContent:'space-around',
-  alignItems: 'center',
-  padding:'30px 40px',
 }
 
 const logoW = {

@@ -17,15 +17,17 @@ const Item = ({name,img,proffesion,description}) => {
 
     <AppContext.Consumer>
       {(context => (
-        <div style={item}>
+        <div 
+          className={styles.item}
+          >
         {proffesion && <ImgTag 
            className={img ? styles.img : styles.imgNone}
            src={img} 
            alt={name} 
          />}
          {name && <p className={styles.p}>{name}</p>}
-         <p>{proffesion}</p>
-         <p>{description}</p>
+         <p className={styles.p_prof}>{proffesion}</p>
+         <p className={styles.p}>{description}</p>
          {!proffesion ? <img style={stylImage} src={image} alt=""/>: null}
          
          {/* <button onClick={() => context.deleteItem(name)}>X</button> */}
@@ -46,22 +48,5 @@ Item.propTypes = {
 Item.defaultProps = {
   img:null
 }
-
-const item = {
-  width:'40vw',
-  margin:'2rem',
-  display:'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
-  alignItems: 'center',
-  border:'1px solid #00d548',
-  borderRadius:'20px',
-  padding:'15px'
-}
-
- 
-
-
-
 
 export default Item;
