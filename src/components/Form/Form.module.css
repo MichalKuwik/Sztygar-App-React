@@ -19,3 +19,12 @@
  h2 {
   color: #1e58ff;
 }
+
+@media screen and (max-width:767px){
+  .formOptions{
+    margin:1rem auto;
+  }
+  .wrapper{
+    width:90%;
+  }
+}

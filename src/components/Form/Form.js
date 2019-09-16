@@ -82,13 +82,13 @@ class Form extends Component {
              </Radio>
            </div>
  
-           {type !== 'crew' ? null : <Input
+           {/* {type !== 'crew' ? null : <Input
              onChange={this.handleInputChange}
              value={this.state.image} 
              name="image"
              id="image"
              label="zdjęcie"
-           />}
+           />} */}
            
            {type !== 'crew' ? null :  <Input
              onChange={this.handleInputChange}
@@ -96,9 +96,11 @@ class Form extends Component {
              name="proffesion"
              id="proffesion"
              label="stanowisko"
+             required
            />}
           
            {type !== 'raports' ? <Input
+             required
              onChange={this.handleInputChange}
              value={this.state.name} 
              name="name"
@@ -109,6 +111,7 @@ class Form extends Component {
    
            {type !== 'works' ? <Input
              onChange={this.handleInputChange}
+             required
              value={this.state.description}
              tag="textarea"
              name="description"

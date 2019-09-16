@@ -40,13 +40,13 @@ const Item = ({name,img,proffesion,description}) => {
 
 Item.propTypes = {
   img: PropTypes.string,
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   proffesion: PropTypes.string,
-  description:PropTypes.string.isRequired
+  description:PropTypes.string
 }
 
 Item.defaultProps = {
-  img:null
+  img:null,
 }
 
 export default Item;

@@ -6,7 +6,15 @@ const RaportsView = () => {
   return(
     <AppContext.Consumer>
       {(context) => (
+        <>
+        <h3 style={{
+          textAlign:'center',
+          fontWeight:'400',
+          color:'#818181',
+          fontSize:'2rem',
+          }}>Raporty</h3>
         <ListItem users={context.raports}/>
+        </>
       )}
     </AppContext.Consumer>
   )

@@ -26,6 +26,7 @@
   border:1px solid #00d548;
   border-radius:20px;
   padding:15px;
+  animation: itemAnim 0.5s ease-in 0.1s both;
 }
 
 .p{
@@ -41,5 +42,16 @@
 @media screen and (max-width:767px){
   .item{
     width:90%;
+  }
+}
+
+@keyframes itemAnim{
+  0%{
+    opacity:0;
+    transform: translateY(20px)
+  }
+  100%{
+    opacity:1;
+    transform: translateY(0px)
   }
 }
