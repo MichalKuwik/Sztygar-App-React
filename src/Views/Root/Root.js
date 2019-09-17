@@ -44,23 +44,23 @@ class Root extends Component {
     })
   }
 
-  // deleteItem = (name) => {
+  deleteItem = (name) => {
     
-  //   const crew = this.state.crew.filter(item => {
-  //     return item.name !== name;
-  //   })
-  //   const works = this.state.works.filter(item => {
-  //     return item.name !== name;
-  //   })
-  //   const raports = this.state.raports.filter(item => {
-  //     return item.name !== name;
-  //   })
-  //   this.setState({
-  //     crew,
-  //     works,
-  //     raports
-  //   })
-  // }
+    const crew = this.state.crew.filter(item => {
+      return item.name !== name;
+    })
+    const works = this.state.works.filter(item => {
+      return item.name !== name;
+    })
+    const raports = this.state.raports.filter(item => {
+      return item.name !== name;
+    })
+    this.setState({
+      crew,
+      works,
+      raports
+    })
+  }
 
   render(){
 
@@ -71,14 +71,14 @@ class Root extends Component {
       handleSubmit: this.handleSubmit,
       deleteItem:this.deleteItem
     }
-
+    
     return (
 
       <BrowserRouter>
       <AppContext.Provider value={contextElements}>
         <Header openModalFn={this.handleOpenModal}/>
         <Switch>
-          <Route exact path="/" component={CrewView}/>
+          <Route exact path="/" component={CrewView} request={this.state.crew.length}/>
           <Route path="/works" component={WorkView}/>
           <Route path="/raports" component={RaportsView}/>
         </Switch>

@@ -2,7 +2,10 @@ import React from 'react';
 import AppContext from '../../context';
 import ListItem from '../../components/ListItem/ListItem';
 
-const CrewView= () => {
+const CrewView= ({request}) => {
+
+  
+
   return(
     <AppContext.Consumer>
       {(context) => (
@@ -13,6 +16,7 @@ const CrewView= () => {
           color:'#818181',
           fontSize:'2rem',
           }}>Dostępni pracownicy</h3>
+        
         <ListItem users={context.crew}/>
         </>
       )}

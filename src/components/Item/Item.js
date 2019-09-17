@@ -30,7 +30,12 @@ const Item = ({name,img,proffesion,description}) => {
          <p className={styles.p}>{description}</p>
          {!proffesion ? <img style={stylImage} src={image} alt=""/>: null}
          
-         {/* <button onClick={() => context.deleteItem(name)}>X</button> */}
+         <button 
+          onClick={
+            () => context.deleteItem(name)
+          }
+          className={styles.delBtn}
+          >X</button>
        </div>
       ))}
     </AppContext.Consumer>

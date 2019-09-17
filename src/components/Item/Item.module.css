@@ -39,6 +39,16 @@
   color:#00d548;
 }
 
+.delBtn{
+  margin-top:1rem;
+  font-size:1.5rem;
+  border:none;
+  padding:5px 10px;
+  color:#fff;
+  background: #00d548;
+  animation: delBtnAnim 0.5s ease-in-out both;
+}
+
 @media screen and (max-width:767px){
   .item{
     width:90%;
