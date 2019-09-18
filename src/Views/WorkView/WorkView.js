@@ -14,7 +14,7 @@ const WorkView = () => {
           fontWeight:'400',
           color:'#818181',
           fontSize:'2rem',
-          }}>Roboty do wykonania</h3>
+          }}>Roboty do wykonania ({context.works.length})</h3>
           <ListItem users={context.works}/>
         </>
       )}

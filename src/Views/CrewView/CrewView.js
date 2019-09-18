@@ -15,7 +15,7 @@ const CrewView= ({request}) => {
           fontWeight:'400',
           color:'#818181',
           fontSize:'2rem',
-          }}>Dostępni pracownicy</h3>
+          }}>Dostępni pracownicy ({context.crew.length})</h3>
         
         <ListItem users={context.crew}/>
         </>

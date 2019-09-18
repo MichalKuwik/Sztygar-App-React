@@ -59,7 +59,7 @@ class Form extends Component {
            <div className={styles.formOptions}>
              <Radio 
                id={types.crew}
-               checked={this.state.activeOption === types.crew}
+               checked={this.state.type === types.crew}
                changeFn={() => this.handleRadioChange(types.crew)}
                >
                  Crew
@@ -67,7 +67,7 @@ class Form extends Component {
              
              <Radio 
                id={types.works}
-               checked={this.state.activeOption === types.works}
+               checked={this.state.type === types.works}
                changeFn={() => this.handleRadioChange(types.works)}
              >
                  Works
@@ -75,7 +75,7 @@ class Form extends Component {
  
              <Radio 
                id={types.raports}
-               checked={this.state.activeOption === types.raports}
+               checked={this.state.type === types.raports}
                changeFn={() => this.handleRadioChange(types.raports)}
                >
                  Raports

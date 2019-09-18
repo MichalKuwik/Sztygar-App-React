@@ -12,7 +12,7 @@ const RaportsView = () => {
           fontWeight:'400',
           color:'#818181',
           fontSize:'2rem',
-          }}>Raporty</h3>
+          }}>Raporty ({context.raports.length})</h3>
         <ListItem users={context.raports}/>
         </>
       )}
