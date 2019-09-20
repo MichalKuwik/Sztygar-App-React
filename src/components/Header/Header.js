@@ -2,21 +2,17 @@ import React from 'react'
 import logo from '../../assets/img/worker.png';
 import HeaderNavigation from '../HeaderNavigation/HeaderNavigation';
 import Button from '../Button/Button';
-import styles from './Header.module.css';
+import {LogoText,Span,HeaderTag} from './HeaderStyled';
 
 const Header = ({openModalFn}) => {
   return(
-    <header 
-      
-      className={styles.wrapper}
-      >
+    <HeaderTag>
       <div style={logoW}>
       <img src={logo} alt=""/>
-      <p style={{
-        marginLeft:'1rem',
-        fontSize:'1.5rem',
-        fontFamily:'sans-serif'
-      }}><span style={{color:'#00d548'}}>Notes</span> Szytgarski</p>
+      <LogoText>
+        <Span>Notes</Span> 
+        Szytgarski
+      </LogoText>
       </div>
       
       <HeaderNavigation/>
@@ -24,14 +20,13 @@ const Header = ({openModalFn}) => {
         secondary
         openModalFn={openModalFn}
         >dodaj</Button>
-    </header>
+    </HeaderTag>
   )
 }
 
 const logoW = {
   display:'flex',
   alignItems:'center',
-
 }
 
 export default Header;

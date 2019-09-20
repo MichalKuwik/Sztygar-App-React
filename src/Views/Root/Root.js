@@ -1,5 +1,4 @@
 import React,{Component} from 'react';
-import './Root.css';
 import AppContext from '../../context';
 import {BrowserRouter,Route,Switch} from 'react-router-dom';
 import CrewView from '../CrewView/CrewView';
@@ -16,7 +15,7 @@ class Root extends Component {
     crew:initialState,
     works:[{name:"Poszyć i napiąć T-3/C1"}],
     raports:[{description:"Wykonano szycie nr 13 na T-3/C1"}],
-    modalIsOpen: true,
+    modalIsOpen: false,
    
   }
 
