@@ -1,14 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styles from './Item.module.css'
 import image from '../../assets/img/tools.png';
 import AppContext from '../../context';
+import {ItemWrapper,DelButton,Paragrph} from './ItemStyled';
+import img from '../../assets/img/miner.png';
 
-const Item = ({name,img,proffesion,description}) => {
+
+
+const Item = ({name,proffesion,description}) => {
   
     const stylImage = {
-    width:'50px',
-    height:'50px',
+      width:'50px',
+      height:'50px'
+    }
+
+    const imgNone = {
+      margin:'auto',
+      width:'150px',
+      height:'150px',
+      borderRadius:'50%',
+      background: "url('../../assets/img/miner1.png')",
+      backgroundSize: '100%',
+      backgroundPosition:'center',
   }
 
     const ImgTag = img ? "img" : "div"
@@ -17,26 +30,22 @@ const Item = ({name,img,proffesion,description}) => {
 
     <AppContext.Consumer>
       {(context => (
-        <div 
-          className={styles.item}
-          >
+        <ItemWrapper>
         {proffesion && <ImgTag 
-           className={img ? styles.img : styles.imgNone}
+           style={imgNone}
            src={img} 
            alt={name} 
          />}
-         {name && <p className={styles.p}>{name}</p>}
-         <p className={styles.p_prof}>{proffesion}</p>
-         <p className={styles.p}>{description}</p>
+         {name && <Paragrph>{name}</Paragrph>}
+         <Paragrph proff>{proffesion}</Paragrph>
+         <Paragrph>{description}</Paragrph>
          {!proffesion ? <img style={stylImage} src={image} alt=""/>: null}
          
-         <button 
-          onClick={
-            () => context.deleteItem(name)
-          }
-          className={styles.delBtn}
-          >X</button>
-       </div>
+         <DelButton 
+          onClick={() => context.deleteItem(name)}
+         >X
+         </DelButton>
+       </ItemWrapper>
       ))}
     </AppContext.Consumer>
     
@@ -44,14 +53,10 @@ const Item = ({name,img,proffesion,description}) => {
 }
 
 Item.propTypes = {
-  img: PropTypes.string,
   name: PropTypes.string,
   proffesion: PropTypes.string,
   description:PropTypes.string
 }
 
-Item.defaultProps = {
-  img:null,
-}
 
 export default Item;

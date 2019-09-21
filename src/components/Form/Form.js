@@ -2,9 +2,9 @@ import React,{Component} from 'react'
 import Input from '../Input/Input';
 import AppContext from '../../context';
 import Button from '../Button/Button.js';
-import styles from './Form.module.css';
 import Title from '../Title/Title';
 import Radio from '../Radio/Radio';
+import {FormWrapper,FormTag,RadioWrapper} from './FormStyled';
 
 const types = {
   crew: "crew",
@@ -49,14 +49,13 @@ class Form extends Component {
     return(
       <AppContext.Consumer>
       {context => (
-        <div className={styles.wrapper}>
+        <FormWrapper>
         <Title>Dodaj {descriptions[type]}</Title>
-         <form 
+         <FormTag 
            autoComplete="off"
            onSubmit={(e) => context.handleSubmit(e,this.state)}
-           className={styles.form}
            >
-           <div className={styles.formOptions}>
+           <RadioWrapper>
              <Radio 
                id={types.crew}
                checked={this.state.type === types.crew}
@@ -80,7 +79,7 @@ class Form extends Component {
                >
                  Raports
              </Radio>
-           </div>
+           </RadioWrapper>
  
            {/* {type !== 'crew' ? null : <Input
              onChange={this.handleInputChange}
@@ -119,8 +118,8 @@ class Form extends Component {
              label={ type === "crew" ? "O pracowniku": "Opis roboty"}
            /> : null} 
           <Button>Dodaj</Button>
-         </form>
-       </div>
+         </FormTag>
+       </FormWrapper>
       )}
       </AppContext.Consumer>
     )
