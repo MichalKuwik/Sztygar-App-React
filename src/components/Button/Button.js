@@ -1,16 +1,15 @@
 import React from 'react';
-import styles from './Button.module.css';
+import {ButtonAction} from './ButtonStyled';
 
 const Button = ({children,secondary,openModalFn,...props}) => {
 
-  const btnClass = secondary ? styles.secondary: styles.btn
+  // const btnClass = secondary ? styles.secondary: styles.btn
 
   return(
-    <button
+    <ButtonAction
       onClick={openModalFn}
-      className={btnClass}
       >{children}
-    </button>
+    </ButtonAction>
   )
 }
 

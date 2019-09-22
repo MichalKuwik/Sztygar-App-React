@@ -117,7 +117,7 @@ class Form extends Component {
              id="descritpion"
              label={ type === "crew" ? "O pracowniku": "Opis roboty"}
            /> : null} 
-          <Button>Dodaj</Button>
+          <Button secondary>Dodaj</Button>
          </FormTag>
        </FormWrapper>
       )}
