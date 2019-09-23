@@ -10,6 +10,7 @@ const InputItem = styled.div`
   flex-shrink: 0;
 `
 
+
 const Input = ({tag:Tag,name,id,maxLength,label,...props}) => {
   return(
     <InputItem>

@@ -1,17 +1,17 @@
 import React from 'react';
-import styles from './Radio.module.css';
+import {Label,RadioInput,RadioWrapper} from './RadioStyled';
 
 const Radio = ({id, checked, changeFn, children}) => (
-  <label className={styles.radio}>
-    <input
+  <Label>
+    <RadioInput
       id={id}
       type="radio"
       checked={checked}
       onChange={changeFn}
     />
-    <div className={styles.radioButton} />
+    <RadioWrapper></RadioWrapper>
   {children}
-  </label>
+  </Label>
 )
 
 export default Radio;

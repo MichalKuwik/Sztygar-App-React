@@ -7,7 +7,7 @@ import WorkView from '../WorkView/WorkView';
 import {initialState} from '../../assets/data/data';
 import Header from '../../components/Header/Header';
 import Modal from '../../components/Modal/Modal';
-
+import {GlobalStyle} from './RootGlobalStyle';
 
 class Root extends Component {
 
@@ -72,7 +72,8 @@ class Root extends Component {
     }
     
     return (
-
+      <>
+      <GlobalStyle/>
       <BrowserRouter>
       <AppContext.Provider value={contextElements}>
         <Header openModalFn={this.handleOpenModal}/>
@@ -84,6 +85,7 @@ class Root extends Component {
         {modalIsOpen ? <Modal closeModalFn={this.handleCLoseModal}/> : null}
         </AppContext.Provider>
       </BrowserRouter>
+      </>
     );
   }
   
