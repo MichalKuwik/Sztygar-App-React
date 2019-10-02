@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Sztygar-App-React/precache-manifest.da1a49c8c2b39c8462cec941a33bb79c.js"
+  "/Sztygar-App-React/precache-manifest.8fd187a940c21c98df43c7fdc15b7723.js"
 );
 
 self.addEventListener('message', (event) => {

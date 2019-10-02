@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d198b76eda5e41ad5e35c38598631c8c",
+    "revision": "628aa6c5e1e365bd688b8050be2bbffb",
     "url": "/Sztygar-App-React/index.html"
   },
   {
-    "revision": "c6176c64da44b7ee8ea1",
+    "revision": "7648ed14f4f9c763faf7",
     "url": "/Sztygar-App-React/static/css/main.19af848a.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Sztygar-App-React/static/js/2.b4db437d.chunk.js"
   },
   {
-    "revision": "c6176c64da44b7ee8ea1",
-    "url": "/Sztygar-App-React/static/js/main.21275b56.chunk.js"
+    "revision": "7648ed14f4f9c763faf7",
+    "url": "/Sztygar-App-React/static/js/main.984de6d0.chunk.js"
   },
   {
     "revision": "1a7e753a089d7e303ca5",
